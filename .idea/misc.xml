@@ -31,7 +31,6 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/../poc/angular-micro-frontend/pom.xml" />
       </list>
     </option>
   </component>
