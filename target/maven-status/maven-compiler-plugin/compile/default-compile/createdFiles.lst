@@ -1,0 +1,11 @@
+com\inertia\repositories\BugRepository.class
+com\inertia\entities\Task.class
+com\inertia\repositories\UserStoryRepository.class
+com\inertia\repositories\SprintRepository.class
+com\inertia\DeveloperNotesApp.class
+com\inertia\entities\Bug.class
+com\inertia\entities\UserStory.class
+com\inertia\entities\Sprint.class
+com\inertia\repositories\NoteRepository.class
+com\inertia\entities\Note.class
+com\inertia\repositories\TaskRepository.class
