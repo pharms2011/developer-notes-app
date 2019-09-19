@@ -1,0 +1,22 @@
+.new-sprint-form{
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+
+  justify-content: space-around;
+}
+
+.full-row{
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.dates{
+  width: 30%;
+}
+
+.saveBtn{
+  color: white;
+  background-color: forestgreen;
+}

@@ -1,0 +1,12 @@
+.user-stories{
+  width: 80%;
+}
+
+.user-story-container{
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+
+  justify-content: space-around;
+  padding: 1em;
+}

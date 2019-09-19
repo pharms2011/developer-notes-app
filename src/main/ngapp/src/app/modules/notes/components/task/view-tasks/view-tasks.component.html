@@ -1,0 +1,2 @@
+<p class="sub-title">Tasks<button mat-icon-button (click)="openDialog()"><mat-icon>add</mat-icon></button></p>
+<button mat-raised-button *ngFor="let task of this.currentTasks" >{{task.content}}</button>

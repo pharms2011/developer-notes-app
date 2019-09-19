@@ -3,6 +3,7 @@ package com.inertia.entities;
 import javax.persistence.*;
 import java.util.List;
 
+@Entity
 @Table(name = "BUG")
 public class Bug {
 
@@ -11,9 +12,11 @@ public class Bug {
     @Column(name = "BUG_ID")
     private int bugId;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "PARENT_ID", referencedColumnName = "PARENT_ID")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "bug")
     private List<Task> tasks;
+
+    @Column(name = "PARENT_ID")
+    private int parentId;
 
     @Column(name = "JIRA_ID")
     private String jiraId;
@@ -26,6 +29,9 @@ public class Bug {
 
     @Column(name = "ESTIMATE")
     private int estimate;
+
+    @Column(name = "REMAINING_TIME")
+    private int remainingTime;
 
 
     public int getBugId() {
@@ -74,5 +80,21 @@ public class Bug {
 
     public void setEstimate(int estimate) {
         this.estimate = estimate;
+    }
+
+    public int getRemainingTime() {
+        return remainingTime;
+    }
+
+    public void setRemainingTime(int remainingTime) {
+        this.remainingTime = remainingTime;
+    }
+
+    public int getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(int parentId) {
+        this.parentId = parentId;
     }
 }

@@ -3,6 +3,7 @@ package com.inertia.entities;
 import javax.persistence.*;
 import java.util.Date;
 
+@Entity
 @Table(name = "NOTE")
 public class Note {
 

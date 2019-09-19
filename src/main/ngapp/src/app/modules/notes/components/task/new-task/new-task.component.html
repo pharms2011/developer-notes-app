@@ -1,0 +1,21 @@
+<h2>New Task</h2>
+<br/>
+<form class="new-task-form">
+
+  <div class="full-row">
+    <input class ="dates" matInput [matDatepicker]="startDate" placeholder="Start Date" [(ngModel)]="this.newTask.date" name = "StartDate">
+    <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+    <mat-datepicker #startDate startView="year"></mat-datepicker>
+
+    <mat-form-field>
+      <input matInput placeholder="Description" [(ngModel)]="this.newTask.content" name="Description">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Capacity" [(ngModel)]="this.newTask.estimate" type="number" name="Capacity">
+    </mat-form-field>
+  </div>
+  <button mat-raised-button class="saveBtn" (click)="save()">Save</button>
+</form>
+
+

@@ -1,0 +1,25 @@
+<h2>New Sprint</h2>
+<br/>
+<form class="new-sprint-form">
+
+  <div class="full-row">
+    <input class ="dates" matInput [matDatepicker]="startDate" placeholder="Start Date" [(ngModel)]="this.newSprint.startDate" name = "StartDate">
+    <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+    <mat-datepicker #startDate startView="year"></mat-datepicker>
+
+    <input class ="dates" matInput [matDatepicker]="endDate" placeholder="End Date" [(ngModel)]="this.newSprint.endDate" name="EndDate">
+    <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+    <mat-datepicker #endDate startView="year"></mat-datepicker>
+
+    <mat-form-field>
+      <input matInput placeholder="Description" [(ngModel)]="this.newSprint.sprintDesc" name="Description">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Capacity" [(ngModel)]="this.newSprint.sprintCapacity" type="number" name="Capacity">
+    </mat-form-field>
+  </div>
+  <button mat-raised-button class="saveBtn" (click)="save()">Save</button>
+</form>
+
+

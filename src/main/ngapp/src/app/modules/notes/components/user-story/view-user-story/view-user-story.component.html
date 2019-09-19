@@ -1,0 +1,11 @@
+<div class="user-story-container" *ngIf="this.selectedUserStory" >
+  <mat-card class="user-story-card">
+    <mat-card-header class="user-story-title">
+      {{this.selectedUserStory.title}}
+    </mat-card-header>
+    <mat-card-content class="user-story-description">
+      {{this.selectedUserStory.description}}
+      <app-view-tasks></app-view-tasks>
+    </mat-card-content>
+  </mat-card>
+</div>

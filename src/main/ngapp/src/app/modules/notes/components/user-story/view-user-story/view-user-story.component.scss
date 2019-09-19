@@ -1,0 +1,24 @@
+.user-story-container{
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+
+  justify-content: space-around;
+  padding: 1em;
+}
+
+.user-story-container{
+  width: 80%;
+}
+
+.user-story-title{
+  width: 100%;
+  font-size: 1.5em;
+  margin: 1em;
+  font-weight: bold;
+}
+
+.user-story-description{
+  font-weight: bold;
+  width: 100%;
+}

@@ -1,0 +1,30 @@
+<h2>New Sprint</h2>
+<br/>
+<form class="new-user-story-form">
+  <div class="full-row">
+
+    <mat-form-field>
+      <input matInput placeholder="Title" [(ngModel)]="this.newUserStory.title" name="title">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Jira Id" [(ngModel)]="this.newUserStory.jiraId" type="number" name="jiraId">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Capacity" [(ngModel)]="this.newUserStory.remainingTime" type="number" name="Capacity">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Estimate" [(ngModel)]="this.newUserStory.estimate" type="number" name="estimate">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Description" [(ngModel)]="this.newUserStory.description" name="title">
+    </mat-form-field>
+
+  </div>
+  <button mat-raised-button class="saveBtn" (click)="save()">Save</button>
+</form>
+
+

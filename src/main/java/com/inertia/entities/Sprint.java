@@ -1,10 +1,15 @@
 package com.inertia.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+@Entity
 @Table(name = "SPRINT")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Sprint {
 
     @Id
@@ -12,18 +17,24 @@ public class Sprint {
     @Column(name = "SPRINT_ID")
     private int sprintId;
 
+    @Column(name = "SPRINT_DESC")
+    private String sprintDesc;
+
+    @Column(name = "SPRINT_CAP")
+    private int sprintCapacity;
+
     @Column(name = "START_DATE")
     private Date startDate;
 
     @Column(name = "END_DATE")
     private Date endDate;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "USER_STORY_ID", referencedColumnName = "USER_STORY_ID")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "PARENT_ID", referencedColumnName = "SPRINT_ID")
     private List<UserStory> stories;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "BUG_ID", referencedColumnName = "BUG_ID")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "PARENT_ID", referencedColumnName = "SPRINT_ID")
     private List<Bug> bugs;
 
     public int getSprintId() {
@@ -50,6 +61,7 @@ public class Sprint {
         this.endDate = endDate;
     }
 
+    @JsonManagedReference
     public List<UserStory> getStories() {
         return stories;
     }
@@ -58,11 +70,28 @@ public class Sprint {
         this.stories = stories;
     }
 
+    @JsonManagedReference
     public List<Bug> getBugs() {
         return bugs;
     }
 
     public void setBugs(List<Bug> bugs) {
         this.bugs = bugs;
+    }
+
+    public int getSprintCapacity() {
+        return sprintCapacity;
+    }
+
+    public void setSprintCapacity(int sprintICapacity) {
+        this.sprintCapacity = sprintICapacity;
+    }
+
+    public String getSprintDesc() {
+        return sprintDesc;
+    }
+
+    public void setSprintDesc(String sprintDesc) {
+        this.sprintDesc = sprintDesc;
     }
 }

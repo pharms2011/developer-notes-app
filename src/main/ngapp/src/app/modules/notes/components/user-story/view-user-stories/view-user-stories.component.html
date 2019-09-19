@@ -1,0 +1,26 @@
+<div *ngIf="!this.selectedSprint">
+  <mat-spinner></mat-spinner>
+</div>
+<div class="user-story-container">
+  <div *ngIf= 'this.selectedSprint' class = "user-stories">
+    <p class="sub-title">User Stories</p>
+    <button mat-icon-button (click)="openDialog()">
+      <mat-icon>add</mat-icon> New Story
+    </button>
+    <mat-accordion >
+      <mat-expansion-panel *ngFor="let story of this.selectedSprint.stories">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{story.jiraId}}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{story.title}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        {{story.description}}
+        <button class="sprintButton" mat-raised-button color="primary" [routerLink]="['/UserStory',story.userStoryId]">view User Story</button>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>
+

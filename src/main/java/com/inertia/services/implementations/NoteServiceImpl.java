@@ -1,4 +1,4 @@
-package com.inertia.services.implimentations;
+package com.inertia.services.implementations;
 
 import com.inertia.entities.Note;
 import com.inertia.repositories.NoteRepository;
@@ -25,7 +25,7 @@ public class NoteServiceImpl implements NoteService {
 
     @Override
     public void getNoteByParent(int parentId) {
-        noteRepository.findAllById()
+        noteRepository.findById(parentId);
     }
 
     @Override
